@@ -1,0 +1,42 @@
+@import "../../styles/color";
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container > * {
+    width: 100%;
+}
+
+.header {
+    color: #6f74dd;
+}
+
+.example-card {
+    border-top: 3em solid #6f74dd;
+    margin-left: auto;
+    margin-right: auto;
+    width:70%;
+    max-width: 100% !important;
+  }
+
+  a{
+      font-size: 15px
+  }
+  
+  a.active{
+    font-weight: bold;
+  }
+  
+  a.upcoming{
+      color: grey;
+  }
+  
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

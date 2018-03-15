@@ -1,0 +1,64 @@
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+    <div class="item item-1" style="" fxFlex="100%">
+        <h3 style="margin-left: 1em; margin-top: 1em;" class="header">
+
+            Create your course with these steps</h3>
+        <br/>
+    </div>
+</div>
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+    <div class="item item-1" fxFlex="25%">
+
+        <div style="margin-left: 3em">
+            <p>
+                <a [ngClass]="{active: currentStep === 0,  upcoming:currentStep !== 0}" class="active">Name you course</a>
+
+            </p>
+            <p>
+                <a [ngClass]="{active: currentStep > 0,  upcoming:currentStep !== 1}" class="upcoming">Course information</a>
+            </p>
+        </div>
+    </div>
+    <div class="item item-3" fxFlex="75%">
+        <mat-card *ngIf="currentStep === 0" [@routerTransition] class="example-card">
+            <mat-card-content class="text-center">
+                <form>
+                    <mat-form-field>
+                        <input matInput placeholder="Name your course" value="">
+                    </mat-form-field>
+                </form>
+            </mat-card-content>
+            <mat-card-actions class="text-center">
+                <button (click)="clickando()" mat-mini-fab color="accent" class="text-center">
+                    <mat-icon aria-label="Example icon-button with a heart icon">arrow_forward</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card *ngIf="currentStep === 1" class="example-card">
+            <mat-card-content *ngIf="currentStep === 1" class="text-center">
+                <mat-form-field>
+                    <input matInput placeholder="How many steps" value="">
+                </mat-form-field>
+                <mat-card-actions class="text-center">
+                    <button (click)="clickando()" mat-mini-fab color="accent" class="text-center">
+                        <mat-icon aria-label="Example icon-button with a heart icon">arrow_forward</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card-content>
+        </mat-card>
+        <mat-card *ngIf="currentStep === 2" class="example-card">
+            <mat-card-content *ngIf="currentStep === 2" class="text-center">
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Description of course" value="" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+                <mat-card-actions class="text-center">
+                    <button (click)="clickando()" mat-mini-fab color="accent" class="text-center">
+                        <mat-icon aria-label="Example icon-button with a heart icon">arrow_forward</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
