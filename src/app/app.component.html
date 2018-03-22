@@ -1,6 +1,21 @@
 <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button>
-        <mat-icon aria-label="Example icon-button with a heart icon">home</mat-icon>
+    <button mat-button color="secondary" routerLink="/">
+        <mat-icon aria-label="Example icon-button with a heart icon">dashboard</mat-icon>
+        <b>Overview</b>
     </button>
+
+    <button mat-button color="secondary" routerLink="/finances">
+        <mat-icon aria-label="Example icon-button with a heart icon">attach_money</mat-icon>
+        <b>Finances</b>
+    </button>
+    <button mat-button color="secondary" routerLink="/production">
+        <mat-icon aria-label="Example icon-button with a heart icon">build</mat-icon>
+        <b>Production</b>
+    </button>
+    <button mat-button color="secondary" routerLink="/human-resources">
+        <mat-icon aria-label="Example icon-button with a heart icon">people</mat-icon>
+        <b>Human Resources</b>
+    </button>
+
 </mat-toolbar>
 <router-outlet></router-outlet>

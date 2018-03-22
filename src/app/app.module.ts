@@ -3,9 +3,13 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+// Import modules
+import { HrDashboardComponent } from './hr-dashboard/hr-dashboard.component';
+import { FinancesDashboardComponent } from './finances-dashboard/finances-dashboard.component';
+import { ProdDashboardComponent } from './prod-dashboard/prod-dashboard.component';
+import { ExecutiveDashboardComponent } from './executive-dashboard/executive-dashboard.component';
 import {
     MatAutocompleteModule,
     MatButtonModule,
@@ -40,44 +44,19 @@ import {
     MatToolbarModule,
     MatTooltipModule
 } from '@angular/material';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-// AoT requires an exported function for factories
-export function createTranslateLoader(http: HttpClient) {
-    // for development
-    // return new TranslateHttpLoader(http, '/start-angular/SB-Admin-BS4-Angular-5/master/dist/assets/i18n/', '.json');
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
 
 @NgModule({
     imports: [
         CommonModule,
         BrowserModule,
-        MatToolbarModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: createTranslateLoader,
-                deps: [HttpClient]
-            }
-        }),
         AppRoutingModule,
         CommonModule,
-        MatAutocompleteModule,
         MatButtonModule,
         MatButtonToggleModule,
-        MatCardModule,
-        MatCheckboxModule,
-        MatChipsModule,
-        MatStepperModule,
         MatDatepickerModule,
-        MatDialogModule,
         MatDividerModule,
-        MatExpansionModule,
-        MatGridListModule,
         MatIconModule,
         MatInputModule,
         MatListModule,
@@ -86,22 +65,16 @@ export function createTranslateLoader(http: HttpClient) {
         MatPaginatorModule,
         MatProgressBarModule,
         MatProgressSpinnerModule,
-        MatRadioModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatSidenavModule,
-        MatSliderModule,
-        MatSlideToggleModule,
-        MatSnackBarModule,
-        MatSortModule,
-        MatTableModule,
-        MatTabsModule,
         MatToolbarModule,
-        MatTooltipModule,
-        FlexLayoutModule
+        MatTooltipModule
     ],
-    declarations: [AppComponent],
-    providers: [],
+    declarations: [
+        AppComponent,
+        HrDashboardComponent,
+        FinancesDashboardComponent,
+        ProdDashboardComponent,
+        ExecutiveDashboardComponent
+    ],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
