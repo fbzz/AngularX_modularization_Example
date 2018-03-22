@@ -6,10 +6,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // Import modules
-import { HrDashboardComponent } from './hr-dashboard/hr-dashboard.component';
-import { FinancesDashboardComponent } from './finances-dashboard/finances-dashboard.component';
-import { ProdDashboardComponent } from './prod-dashboard/prod-dashboard.component';
-import { ExecutiveDashboardComponent } from './executive-dashboard/executive-dashboard.component';
 import {
     MatAutocompleteModule,
     MatButtonModule,
@@ -44,6 +40,11 @@ import {
     MatToolbarModule,
     MatTooltipModule
 } from '@angular/material';
+
+import { HrDashboardComponent } from './hr-dashboard/hr-dashboard.component';
+import { FinancesDashboardComponent } from './finances-dashboard/finances-dashboard.component';
+import { ProdDashboardComponent } from './prod-dashboard/prod-dashboard.component';
+import { ExecutiveDashboardComponent } from './executive-dashboard/executive-dashboard.component';
 
 @NgModule({
     imports: [
